@@ -12,8 +12,10 @@ class DashboardController extends Controller
 
 
 
-        $ideas=Idea::all();
+        //$ideas = Idea::all()->sortByDesc('created_at')->forPage(1,3);
 
-        return view('dashboard',compact('ideas'));
+        return view('dashboard',[
+            'ideas'=>Idea::OrderBy('created_at','desc')->paginate(5)
+        ]);
     }
 }
