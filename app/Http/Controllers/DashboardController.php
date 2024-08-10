@@ -10,9 +10,7 @@ class DashboardController extends Controller
 {
     public function create(){
 
-        $idea = new Idea();
-        $idea->content='testt';
-        $idea->save();
+
 
         $ideas=Idea::all();
 
